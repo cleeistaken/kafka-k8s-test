@@ -85,7 +85,10 @@ kubectl cp run-producer.sh ubuntu:/opt/kafka_2.13-3.9.1/bin
 
 ### 13. Run test
 ```shell
+# Log into the client pod
 kubectl exec -it ubuntu -- /bin/bash
+
+# Then paste this in the client pod shell
 cd /opt/kafka_2.13-3.9.1/bin
 chmod a+x run-producer.sh
 ./run-producer.sh
