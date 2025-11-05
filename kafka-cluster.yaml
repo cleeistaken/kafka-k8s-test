@@ -14,32 +14,32 @@ spec:
     volumes:
       - id: 0
         type: persistent-claim
-        size: 100Gi
+        size: 200Gi
         deleteClaim: true
         kraftMetadata: shared
       - id: 1
         type: persistent-claim
-        size: 100Gi
+        size: 200Gi
         deleteClaim: true
         kraftMetadata: shared
       - id: 2
         type: persistent-claim
-        size: 100Gi
+        size: 200Gi
         deleteClaim: true
         kraftMetadata: shared
       - id: 3
         type: persistent-claim
-        size: 100Gi
+        size: 200Gi
         deleteClaim: true
         kraftMetadata: shared
       - id: 4
         type: persistent-claim
-        size: 100Gi
+        size: 200Gi
         deleteClaim: true
         kraftMetadata: shared
       - id: 5
         type: persistent-claim
-        size: 100Gi
+        size: 200Gi
         deleteClaim: true
         kraftMetadata: shared
 ---
