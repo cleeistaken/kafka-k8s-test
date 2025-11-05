@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+  labels:
+    app: ubuntu
+spec:
+  containers:
+    - name: ubuntu
+      image: ubuntu
+      resources:
+        limits:
+          memory: "32000Mi"
+          cpu: "24000m"
+        requests:
+          memory: "16000Mi"
+          cpu: "10000m"
+      command: ["/bin/sh","-c"]
+      args:
+        - apt-get update -y;
+          apt-get install kafkacat wget iputils-ping default-jdk -y;
+          cd /opt;
+          wget https://dlcdn.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz;
+          tar -xzvf kafka_2.13-3.9.1.tgz;
+          cd kafka_2.13-3.9.1/bin;
+          sleep infinity;
+
+  hostNetwork: false
+  dnsPolicy: ClusterFirstWithHostNet

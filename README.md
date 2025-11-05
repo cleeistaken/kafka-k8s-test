@@ -8,8 +8,8 @@
 
 ### 1. Set variables
 ```shell
-SUPERVISOR_IP="10.139.10.6"
-SUPERVISOR_USERNAME="charles-cl.lee@showcase.tmm.broadcom.lab"
+SUPERVISOR_IP="10.0.0.1"
+SUPERVISOR_USERNAME="user@domain"
 NAMESPACE_NAME="modern-app"
 CLUSTER_NAME="modern-app-vks"
 ```
