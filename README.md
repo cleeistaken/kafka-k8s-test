@@ -22,56 +22,63 @@ NAMESPACE_NAME="modern-app"
 CLUSTER_NAME="modern-app-vks"
 ```
 
-### 3. Create context on supervisor
+### 3. Login to supervisor
+```shell
+# Login and get contexts
+kubectl vsphere login --server=$SUPERVISOR_IP  --insecure-skip-tls-verify=true -u $SUPERVISOR_USERNAME
+kubectl config get-contexts
+```
+
+### 4. Create context on supervisor
 ```shell
 # Create a context named 'pt'
 vcf context create pt --endpoint $SUPERVISOR_IP --insecure-skip-tls-verify -u $SUPERVISOR_USERNAME 
 vcf context use pt
 ```
 
-### 4. Create VKS cluster
+### 5. Create VKS cluster
 ```shell
 # Create a VKS cluster as defined in vks.yaml
 kubectl apply -f vks.yaml
 ```
 
-### 5. Connect to VKS cluster
+### 6. Connect to VKS cluster
 ```shell
 # Connect to the VKS cluster
 vcf context create vks --endpoint $SUPERVISOR_IP --insecure-skip-tls-verify -u $SUPERVISOR_USERNAME --workload-cluster-namespace=$NAMESPACE_NAME --workload-cluster-name=$CLUSTER_NAME
 vcf context use vks:$CLUSTER_NAME
 ```
 
-### 6. Create namespace
+### 7. Create namespace
 ```shell
 # Create a namespace on the VKS cluster
 kubectl create namespace strimzi
 kubectl config set-context --current --namespace=strimzi
 ```
 
-### 7. Deploy operator
+### 8. Deploy operator
 ```shell
 # Install the strimzi operator
 helm install strimzi-cluster-operator oci://quay.io/strimzi-helm/strimzi-kafka-operator
 ```
 
-### 8. Create kafka cluster
+### 9. Create kafka cluster
 ```shell
 # Create kafka cluster as defined in kafka-cluster.yaml
 kubectl apply -f kafka-cluster.yaml
 ```
 
-### 9. Create client
+### 10. Create client
 ```shell
 kubectl apply -f client-pod.yaml
 ```
 
-### 10. Copy test script
+### 11. Copy test script
 ```shell
 kubectl cp run-producer.sh ubuntu:/opt/kafka_2.13-3.9.1/bin
 ```
 
-### 11. Run test
+### 12. Run test
 ```shell
 kubectl exec -it ubuntu -- /bin/bash
 cd /opt/kafka_2.13-3.9.1/bin
