@@ -2,9 +2,9 @@
 
 ## Requirements
 ### CLI Tools
-* kubectl cli (v1.34 https://dl.k8s.io/release/v1.34.0/bin/linux/amd64/kubectl)
-* vcf cli (v9.0.0)
-* helm cli (v3.19 https://get.helm.sh/helm-v3.19.0-linux-amd64.tar.gz)
+* kubectl cli v1.34: https://dl.k8s.io/release/v1.34.0/bin/linux/amd64/kubectl
+* vcf cli v9.0.1: https://packages.broadcom.com/artifactory/vcf-distro/vcf-cli/linux/amd64/v9.0.1/
+* helm cli v3.19: https://get.helm.sh/helm-v3.19.0-linux-amd64.tar.gz
 
 ## Procedure
 
@@ -93,3 +93,8 @@ cd /opt/kafka_2.13-3.9.1/bin
 chmod a+x run-producer.sh
 ./run-producer.sh
 ```
+
+## References
+* https://kubernetes.io/docs/tasks/tools/
+* https://helm.sh/docs/intro/install/
+* https://packages.broadcom.com/artifactory/vcf-distro/vcf-cli/
