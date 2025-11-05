@@ -102,7 +102,7 @@ main() {
 
   delete_all_topics || true
 
-  for count in 1 2; do
+  for count in 1 2 4 6; do
     create_topics "$count"
     run_producers "$count"
     summarize_round "$count"
