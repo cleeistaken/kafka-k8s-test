@@ -2,9 +2,9 @@
 
 ## Requirements
 ### CLI Tools
-* kubectl cli (v1.30.10+vmware.1-fips)
+* kubectl cli (v1.34 https://dl.k8s.io/release/v1.34.0/bin/linux/amd64/kubectl)
 * vcf cli (v9.0.0)
-* helm cli (v4.0.0-rc.1)
+* helm cli (v3.19 https://get.helm.sh/helm-v3.19.0-linux-amd64.tar.gz)
 
 ## Procedure
 
